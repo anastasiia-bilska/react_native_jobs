@@ -11,7 +11,7 @@ import {
 } from '../components';
 
 const Home = () => {
-  const Router = useRouter();
+  const router = useRouter();
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -20,7 +20,7 @@ const Home = () => {
           headerStyle: { backgroundColor: COLORS.lightWhite },
           headerShadowVisible: false,
           headerLeft: () => (
-            <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
+            <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" handlePress={() => {router.push('/nfc')}} />
           ),
           headerRight: () => (
             <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" />
@@ -39,7 +39,6 @@ const Home = () => {
           <Welcome />
           <Popularjobs />
           <Nearbyjobs />
-          
         </View>
       </ScrollView>
     </SafeAreaView>
